@@ -6,8 +6,11 @@
 
 A chess engine in 4 KB of Python, built for the make.fun tiny-chess-01 bounty.
 
-Bitboard board (Python ints, ray tables), negamax PVS alpha-beta with a
-transposition table, quiescence search, late-move reductions and check
-evasions; tapered piece-square evaluation with doubled and passed
-pawn terms. Fully deterministic: a fixed 60,000-node budget per move,
-no clock, no randomness.
+Bitboard board (Python ints, ray tables) with copy-make; negamax PVS
+alpha-beta with a transposition table, null-move pruning, late-move
+reductions, futility pruning and check extensions; quiescence over
+captures and promotions, with all evasions when in check. Tapered
+piece-square evaluation plus bishop pair, doubled, isolated and passed
+pawn terms, rook open-file bonuses and king shelter. Fully
+deterministic: a fixed 100,000-node budget per move, no clock, no
+randomness.
